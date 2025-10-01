@@ -3,7 +3,7 @@
 Clustering the **Dry Bean** data with a **Genetic Algorithm (GA)** and comparing it to a **K-Means** baseline.  
 This is a notebook-first project that follows a course assignment; the repository includes the original guide and the final report (in Persian).
 
-> This work was completed as part of a course project at **Amirkabir University of Technology (Tehran Polytechnic)**. :contentReference[oaicite:0]{index=0}
+> This work was completed as part of a course project at **Amirkabir University of Technology (Tehran Polytechnic)**. 
 
 ---
 
@@ -12,8 +12,7 @@ This is a notebook-first project that follows a course assignment; the repositor
 - `01_ga_dry_beans.ipynb` — main notebook (data load → baselines → GA → evaluation).
 - `Dry_Bean_Dataset.xlsx` — dataset file used during the assignment (place at repo root).
 - `Guide.pdf` — assignment guide (grading/requirements).
-- `projectreport.pdf` — final report (Persian, includes method, figures, and results). :contentReference[oaicite:1]{index=1}
-
+- `projectreport.pdf` — final report (Persian, includes method, figures, and results). 
 ---
 
 ## Quick start
@@ -31,20 +30,20 @@ This is a notebook-first project that follows a course assignment; the repositor
 ### Baseline — K-Means
 - Standard K-Means clustering on the feature space.
 - Used as a reference for GA performance and qualitative comparison.  
-  (See the “K-Means Clustering” figure section in the report.) :contentReference[oaicite:2]{index=2}
+  (See the “K-Means Clustering” figure section in the report.) 
 
 ### Genetic Algorithm (for clustering)
 The GA is set up to search for a better clustering configuration than K-Means:
 
-- **Chromosome/encoding:** Each chromosome represents a clustering solution. In this assignment, a chromosome contains **7 genes (one per cluster)**; each gene encodes the **coordinates of a cluster centroid**. This directly maps individuals to full clusterings. :contentReference[oaicite:3]{index=3}
-- **Initial population:** Randomly generated solutions of the above form. :contentReference[oaicite:4]{index=4}
-- **Fitness function:** Quality of a chromosome’s clustering measured against the **true classes** (the assignment compares resulting clusters to the ground-truth labels and reports **clustering accuracy** as the objective/primary metric). :contentReference[oaicite:5]{index=5}
-- **Selection:** Rank or tournament-style selection that favors higher-fitness individuals. :contentReference[oaicite:6]{index=6}
-- **Crossover:** **One-point crossover** between two parents to produce two children, combining centroid genes from both. :contentReference[oaicite:7]{index=7}
-- **Mutation:** Bit/coordinate mutation with some probability to maintain diversity (applied gene-wise to child individuals). :contentReference[oaicite:8]{index=8}
-- **Elitism/loop:** Evaluate fitness → select → crossover → mutate → form the next generation; repeat for a fixed number of generations or until improvement stalls. :contentReference[oaicite:9]{index=9}
+- **Chromosome/encoding:** Each chromosome represents a clustering solution. In this assignment, a chromosome contains **7 genes (one per cluster)**; each gene encodes the **coordinates of a cluster centroid**. This directly maps individuals to full clusterings.
+- **Initial population:** Randomly generated solutions of the above form. 
+- **Fitness function:** Quality of a chromosome’s clustering measured against the **true classes** (the assignment compares resulting clusters to the ground-truth labels and reports **clustering accuracy** as the objective/primary metric). 
+- **Selection:** Rank or tournament-style selection that favors higher-fitness individuals.
+- **Crossover:** **One-point crossover** between two parents to produce two children, combining centroid genes from both. 
+- **Mutation:** Bit/coordinate mutation with some probability to maintain diversity (applied gene-wise to child individuals).
+- **Elitism/loop:** Evaluate fitness → select → crossover → mutate → form the next generation; repeat for a fixed number of generations or until improvement stalls.
 
-> The implementation outline in the report defines helper routines such as `initialize_population`, `fitness_function`, `select_parents`, `crossover`, and `mutate`. :contentReference[oaicite:10]{index=10}
+> The implementation outline in the report defines helper routines such as `initialize_population`, `fitness_function`, `select_parents`, `crossover`, and `mutate`. 
 
 ---
 
@@ -54,11 +53,11 @@ The GA is set up to search for a better clustering configuration than K-Means:
   - **Genetic Algorithm:** **0.50**
   - **K-Means:** **0.30**
   
-  These values are reported in the comparative analysis section and figures (“True Clustering”, “K-Means Clustering”, “GA Clustering”). :contentReference[oaicite:11]{index=11}
+  These values are reported in the comparative analysis section and figures (“True Clustering”, “K-Means Clustering”, “GA Clustering”).
 
-- **Qualitative comparison:** Visualizations in the report show the GA clustering aligning closer to the true partitioning than K-Means under the assignment’s setup. :contentReference[oaicite:12]{index=12}
+- **Qualitative comparison:** Visualizations in the report show the GA clustering aligning closer to the true partitioning than K-Means under the assignment’s setup. 
 
-> For plots and exact setup details, see the figure panels labeled **4-1**, **4-2**, and **4-3** (“K-Means Clustering”, “GA Clustering”, and “True Clustering”) in `projectreport.pdf`. :contentReference[oaicite:13]{index=13}
+> For plots and exact setup details, see the figure panels labeled **4-1**, **4-2**, and **4-3** (“K-Means Clustering”, “GA Clustering”, and “True Clustering”) in `projectreport.pdf`.
 
 ---
 
@@ -71,7 +70,7 @@ The GA is set up to search for a better clustering configuration than K-Means:
 
 ## Notes, limitations, and next steps
 
-- **Objective choice:** Using **accuracy vs. labels** makes the task semi-supervised; purely unsupervised alternatives include **Silhouette** or **Calinski–Harabasz** as GA fitness. You can try swapping the fitness in the notebook to observe differences. :contentReference[oaicite:14]{index=14}
+- **Objective choice:** Using **accuracy vs. labels** makes the task semi-supervised; purely unsupervised alternatives include **Silhouette** or **Calinski–Harabasz** as GA fitness. You can try swapping the fitness in the notebook to observe differences.
 - **Encoding sensitivity:** Encoding centroids gives GA direct control over cluster positions but can be sensitive to scaling; ensure features are standardized in the notebook before clustering.
 - **Future ideas:** Multiple restarts, parameter sweeps (population size, mutation rate), and hybrid runs (K-Means seeding followed by GA refinement).
 
@@ -80,5 +79,5 @@ The GA is set up to search for a better clustering configuration than K-Means:
 ## Acknowledgments
 
 - Course project at **Amirkabir University of Technology (Tehran Polytechnic)**.  
-- **Assignment guide**: `xGuide.pdf`.  
-- **Final report**: `projectreport.pdf` (Persian). :contentReference[oaicite:15]{index=15}
+- **Assignment guide**: `Guide.pdf`.  
+- **Final report**: `projectreport.pdf` (Persian).
